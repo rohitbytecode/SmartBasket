@@ -40,7 +40,7 @@ A production-quality Angular frontend for a full-stack Grocery Store web applica
 
 1. **Clone or navigate to the project**
    ```bash
-   cd "d:\project\Bapu real\grocery-store-frontend"
+   cd "d:\project\Bapu real\smart-basket-frontend"
    ```
 
 2. **Install dependencies**

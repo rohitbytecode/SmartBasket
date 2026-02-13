@@ -30,7 +30,7 @@ app.get('/', (_req, res) => {
 app.get('/health', (_req, res) => {
     res.status(200).json({
         status: "ok",
-        service: "grocery-store-backend",
+        service: "smart-basket-backend",
         uptime: process.uptime(),
         timestamp: new Date().toISOString()
     });

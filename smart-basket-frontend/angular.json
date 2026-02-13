@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "grocery-store-frontend": {
+        "smart-basket-frontend": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/grocery-store-frontend",
+                        "outputPath": "dist/smart-basket-frontend",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": [
@@ -76,10 +76,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "buildTarget": "grocery-store-frontend:build:production"
+                            "buildTarget": "smart-basket-frontend:build:production"
                         },
                         "development": {
-                            "buildTarget": "grocery-store-frontend:build:development"
+                            "buildTarget": "smart-basket-frontend:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "buildTarget": "grocery-store-frontend:build"
+                        "buildTarget": "smart-basket-frontend:build"
                     }
                 },
                 "test": {

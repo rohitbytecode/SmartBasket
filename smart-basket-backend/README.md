@@ -12,7 +12,7 @@ Requirements
 Run locally
 
 ```bash
-cd grocery-store-backend
+cd smart-basket-backend
 npm install
 # create .env with MONGO_URI (and optionally JWT_TOKEN, ADMIN_EMAIL, ADMIN_PASSWORD)
 npm run dev
