@@ -8,7 +8,7 @@ const connectDB = async () => {
         await mongoose.connect(process.env.MONGO_URI);
         console.log('MongoDB connected');
 
-        const adminEmail = process.env.ADMIN_EMAIL || 'admin@freshmart.com';
+        const adminEmail = process.env.ADMIN_EMAIL || 'admin@smartbasket.com';
         const adminPassword = process.env.ADMIN_PASSWORD || 'admin123';
         const existing = await User.findOne({ email: adminEmail });
         if (!existing) {
