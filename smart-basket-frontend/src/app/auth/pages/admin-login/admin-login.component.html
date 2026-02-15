@@ -2,14 +2,14 @@
     <mat-card class="login-card">
         <div class="login-header">
             <mat-icon class="admin-icon">admin_panel_settings</mat-icon>
-            <h1>Admin Login</h1>
-            <p>Enter your credentials to access the admin panel</p>
+            <h1>Admin Portal</h1>
+            <p>Administrator access only - Enter your credentials</p>
         </div>
 
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput formControlName="email" type="email" placeholder="admin@freshmart.com" />
+                <input matInput formControlName="email" type="email" placeholder="admin@smartbasket.com" />
                 <mat-icon matPrefix>email</mat-icon>
                 <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
                 <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Enter a valid email</mat-error>
@@ -31,7 +31,7 @@
             <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid || loading"
                 class="login-btn">
                 <mat-icon>login</mat-icon>
-                {{ loading ? 'Logging in...' : 'Login' }}
+                {{ loading ? 'Logging in...' : 'Access Admin Panel' }}
             </button>
         </form>
 

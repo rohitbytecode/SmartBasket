@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 import { AuthRoutingModule } from './auth-routing.module';
 
-import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { ClientAuthComponent } from './pages/client-auth/client-auth.component';
 
 @NgModule({
     declarations: [
-        AdminLoginComponent
+        ClientAuthComponent
     ],
     imports: [
         SharedModule,
