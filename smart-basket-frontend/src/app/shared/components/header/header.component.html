@@ -7,7 +7,8 @@
 
     <form class="search-bar" (ngSubmit)="onSearch()" aria-label="Search products">
       <mat-icon>search</mat-icon>
-      <input [(ngModel)]="searchQuery" name="searchQuery" placeholder="Search vegetables, fruits, dairy..." aria-label="Search products" />
+      <input [(ngModel)]="searchQuery" name="searchQuery" placeholder="Search vegetables, fruits, dairy..."
+        aria-label="Search products" />
       <button mat-raised-button color="primary" type="submit">Search</button>
     </form>
 
@@ -16,13 +17,15 @@
         <mat-icon>location_on</mat-icon>
         Deliver to Mumbai
       </button>
-      <a mat-button routerLink="/auth/login" *ngIf="!isLoggedIn">Account</a>
+      <a mat-button routerLink="/auth/login" *ngIf="!isLoggedIn">Login</a>
       <a mat-button routerLink="/admin" *ngIf="isAdmin">Admin</a>
       <button mat-button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
       <a class="cart-link" routerLink="/cart" aria-label="Cart">
-        <mat-icon [matBadge]="(cartItemCount$ | async) || 0" [matBadgeHidden]="(cartItemCount$ | async) === 0" matBadgeColor="warn">shopping_cart</mat-icon>
+        <mat-icon [matBadge]="(cartItemCount$ | async) || 0" [matBadgeHidden]="(cartItemCount$ | async) === 0"
+          matBadgeColor="warn">shopping_cart</mat-icon>
       </a>
-      <button mat-icon-button class="menu-btn" (click)="toggleMobileMenu()"><mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon></button>
+      <button mat-icon-button class="menu-btn" (click)="toggleMobileMenu()"><mat-icon>{{ mobileMenuOpen ? 'close' :
+          'menu' }}</mat-icon></button>
     </div>
   </div>
 

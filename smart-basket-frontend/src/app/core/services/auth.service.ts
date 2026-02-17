@@ -28,6 +28,15 @@ export class AuthService {
         );
     }
 
+    // User Registration
+    register(name: string, email: string, password: string): Observable<AuthResponse> {
+        return this.http.post<AuthResponse>(`${this.apiUrl}/register`, { name, email, password }).pipe(
+            tap(response => {
+                this.setSession(response);
+            })
+        );
+    }
+
     // Admin Login
     adminLogin(email: string, password: string): Observable<AuthResponse> {
         return this.http.post<AuthResponse>(`${this.apiUrl}/admin/login`, { email, password }).pipe(

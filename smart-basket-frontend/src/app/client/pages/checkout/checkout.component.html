@@ -5,7 +5,7 @@
       <h3>Delivery Address</h3>
       <mat-form-field appearance="outline">
         <mat-label>Select address</mat-label>
-        <mat-select [(value)]="address">
+        <mat-select [(ngModel)]="address" [disabled]="isLoading">
           <mat-option value="Home - Mumbai">Home - Mumbai</mat-option>
           <mat-option value="Office - Andheri">Office - Andheri</mat-option>
         </mat-select>
@@ -14,7 +14,7 @@
       <h3>Delivery Slot</h3>
       <mat-form-field appearance="outline">
         <mat-label>Select slot</mat-label>
-        <mat-select [(value)]="slot">
+        <mat-select [(ngModel)]="slot" [disabled]="isLoading">
           <mat-option value="Today, 6 PM - 8 PM">Today, 6 PM - 8 PM</mat-option>
           <mat-option value="Tomorrow, 8 AM - 10 AM">Tomorrow, 8 AM - 10 AM</mat-option>
         </mat-select>
@@ -23,7 +23,7 @@
       <h3>Payment Method</h3>
       <mat-form-field appearance="outline">
         <mat-label>Payment</mat-label>
-        <mat-select [(value)]="payment">
+        <mat-select [(ngModel)]="payment" [disabled]="isLoading">
           <mat-option value="cod">Cash on Delivery</mat-option>
           <mat-option value="upi">UPI</mat-option>
           <mat-option value="card">Credit/Debit Card</mat-option>
@@ -33,9 +33,19 @@
 
     <aside class="box summary">
       <h3>Order Summary</h3>
-      <p><span>Items</span><strong>As per cart</strong></p>
-      <p><span>Delivery</span><strong>Calculated at cart</strong></p>
-      <button mat-raised-button color="primary" (click)="placeOrder()">Place Order</button>
+      <p><span>Items</span><strong>{{ cartItems.length }} item(s)</strong></p>
+      <p><span>Total</span><strong>₹{{ cartTotal }}</strong></p>
+      <p><span>Delivery</span><strong>Free</strong></p>
+      <hr>
+      <p><span>Grand Total</span><strong>₹{{ cartTotal }}</strong></p>
+      <button 
+        mat-raised-button 
+        color="primary" 
+        (click)="placeOrder()"
+        [disabled]="isLoading || cartItems.length === 0">
+        <mat-icon *ngIf="isLoading">hourglass_empty</mat-icon>
+        <span>{{ isLoading ? 'Placing Order...' : 'Place Order' }}</span>
+      </button>
     </aside>
   </div>
 </div>
