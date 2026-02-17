@@ -21,6 +21,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 // Components
 import { HeaderComponent } from './components/header/header.component';
@@ -46,7 +47,8 @@ const MATERIAL_MODULES = [
     MatProgressSpinnerModule,
     MatChipsModule,
     MatSliderModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTooltipModule
 ];
 
 @NgModule({
